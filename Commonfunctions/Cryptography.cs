@@ -63,7 +63,7 @@ namespace Commonfunctions.Cryptography
         /// <returns></returns>
         public static string EncryptString(string clearText, string Password)
         {
-            return Convert.ToBase64String(EncryptString(System.Text.Encoding.Unicode.GetBytes(clearText), Password));
+            return System.Convert.ToBase64String(EncryptString(System.Text.Encoding.Unicode.GetBytes(clearText), Password));
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Commonfunctions.Cryptography
         /// <returns></returns>
         public static string DecryptString(string cipherText, string Password)
         {
-            return System.Text.Encoding.Unicode.GetString(DecryptString(Convert.FromBase64String(cipherText), Password));
+            return System.Text.Encoding.Unicode.GetString(DecryptString(System.Convert.FromBase64String(cipherText), Password));
         }
 
         /// <summary>
