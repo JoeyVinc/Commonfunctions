@@ -37,7 +37,7 @@
   <ItemGroup>
     <Compile Include="Convert.cs" />
     <Compile Include="Cryptography.cs" />
-    <Compile Include="Debugging.cs" />
+    <Compile Include="Logging.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
