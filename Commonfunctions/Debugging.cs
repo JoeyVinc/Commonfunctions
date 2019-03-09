@@ -8,23 +8,28 @@ namespace Commonfunctions.Debugging
 {
     public static class Output
     {
-        public static void Print(string value, bool linebreak = false, bool logEnabled = false)
+        public static void Print(string value, bool logEnabled = true, string logFile = null)
         {
 #if DEBUG
             logEnabled = true;
 #endif
             if (logEnabled)
             {
-                if (linebreak)
-                    Console.WriteLine(value);
-                else
+                if (logFile == null)
                     Console.Write(value);
+                else
+                {
+                    System.IO.StreamWriter file = new System.IO.StreamWriter(logFile, true);
+                    file.AutoFlush = true;
+                    file.Write(value);
+                    file.Close();
+                }
             }
         }
 
-        public static void PrintLn(string value, bool logEnabled = false)
+        public static void PrintLn(string value, bool logEnabled = true, string logFile = null)
         {
-            Print(value, true, logEnabled);
+            Print(value + "\n", logEnabled, logFile);
         }
     }
 }
