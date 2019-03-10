@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Commonfunctions.Logging
 {
@@ -25,6 +22,8 @@ namespace Commonfunctions.Logging
                     file.Close();
                 }
             }
+
+            Debug.Write(value);
         }
 
         public static void PrintLn(string value, bool logEnabled = true, string logFile = null)
