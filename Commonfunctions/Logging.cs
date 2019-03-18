@@ -28,7 +28,7 @@ namespace Commonfunctions.Logging
 
         public static void PrintLn(string value, bool logEnabled = true, string logFile = null)
         {
-            Print(value + "\n", logEnabled, logFile);
+            Print(value + "\r\n", logEnabled, logFile);
         }
     }
 }
